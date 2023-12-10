@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felix Dominguez - Personal Website</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <img src="HP.jpg" alt="Felix Dominguez - Profile Picture" />
+        <h1>Felix Dominguez</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="javascript:void(0);" onclick="showSection('home')">Home</a></li>
+            <li><a href="javascript:void(0);" onclick="showSection('portfolio')">Portfolio</a></li>
+            <li><a href="javascript:void(0);" onclick="showSection('videos')">Videos</a></li>
+            <li><a href="javascript:void(0);" onclick="showSection('contact')">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <section id="home">
+            <img src="HP.jpg" alt="Home Image" />
+            <h2>Introduction</h2>
+            <p>Hi there, My name is Felix Dominguez, and I'm a computer science student at National Louis University right now. My goal is to become more experienced in HTML and demonstrate my abilities to potential jobs in the future. Through my website, I hope to give them information about my past, accomplishments, and current projects.</p>
+        </section>
+
+        <section id="portfolio" style="display:none;">
+    <img src="portfolio.png" alt="Portfolio Image" />
+    <h2>Portfolio</h2>
+    <p>This is the section where I will display my work, projects, and achievements.</p>
+
+    <!-- Added table in the Portfolio section -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Skill</th>
+                <th scope="col">Proficiency</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>HTML</td>
+                <td>Intermediate</td>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td>Intermediate</td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+</section>
+
+
+        <section id="videos" class="clickable-section">
+            <h2>Videos</h2>
+            <div class="video-section">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/gMitL_O1CbI?wmode=opaque&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+            </div>
+            <div class="video-section">
+                <video width="320" height="240" controls="controls">
+                    <source src="IMG_0.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+        <section id="contact" style="display:none;">
+            <h2>Contact Section</h2>
+            <form onsubmit="submitForm()">
+                <label for="email">
+                    <img src="Email.svg" alt="Email Icon" style="width: 20px; height: 20px; margin-right: 5px;">
+                    Email:
+                </label>
+                <input type="email" id="emailInput" name="email" placeholder="Enter your email" required>
+                <button type="button" onclick="submitForm()">Submit</button>
+            </form>
+            <p>You can also get in contact with me at <a href="mailto:Fdominguez5@my.nl.edu">Fdominguez5@my.nl.edu</a>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Felix Dominguez</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        function submitForm() {
+            alert("Form submitted!");
+        }
+
+        function showSection(sectionId) {
+            var sections = document.querySelectorAll('.content section');
+            sections.forEach(function (section) {
+                section.style.display = 'none';
+            });
+
+            var selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+</html>
